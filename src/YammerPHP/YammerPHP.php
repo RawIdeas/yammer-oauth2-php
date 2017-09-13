@@ -19,6 +19,7 @@ class YammerPHP {
 	public $oauthToken;
 	public $oauthTokenSecret;
 	public $callbackUrl;
+	private $proxy;
 
 	protected $authToken;
 
@@ -31,6 +32,7 @@ class YammerPHP {
 		$this->consumerKey = $config['consumer_key'];
 		$this->consumerSecret = $config['consumer_secret'];
 		$this->callbackUrl = $config['callbackUrl'];
+		$this->proxy = $config['proxy'];
 
 		/* Set Up OAuth Consumer */
 		if (isset($config['oauth_token']) && $config['oauth_token_secret']) {
@@ -82,6 +84,9 @@ class YammerPHP {
 		}
 
 		$ch = curl_init();
+		if ($this->proxy) {
+			curl_setopt($ch, CURLOPT_PROXY, $this->proxy);
+		}
 		curl_setopt($ch, CURLOPT_URL, 'https://www.yammer.com/oauth2/access_token.json');
 		curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -151,6 +156,9 @@ class YammerPHP {
 		$headers[] = "Authorization: Bearer " . $this->oauthToken;
 
 		$ch = curl_init();
+		if ($this->proxy) {
+			curl_setopt($ch, CURLOPT_PROXY, $this->proxy);
+		}
 		$data_stream = $url . '?' . http_build_query($data);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
