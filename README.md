@@ -2,6 +2,8 @@
 
 PHP wrapper for Yammer's API.
 
+***Please use the original author's package (stephenyeargin/yammer-oauth2-php). This is currently under development.***
+
 ## Install
 
 Install with Composer:

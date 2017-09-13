@@ -1,11 +1,15 @@
 {
-    "name": "stephenyeargin/yammer-oauth2-php",
+    "name": "afinno/yammer-oauth2-php",
     "description": "An OAuth2 Wrapper for Yammer",
     "license": "MIT",
     "authors": [
         {
             "name": "Stephen Yeargin",
             "email": "stephen@yearg.in"
+        },
+        {
+            "name": "Andrea Finno",
+            "email": "me@finno.com"
         }
     ],
     "require": {},
