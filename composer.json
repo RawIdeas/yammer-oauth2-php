@@ -1,5 +1,5 @@
 {
-    "name": "afinno/yammer-oauth2-php",
+    "name": "RawIdeas/yammer-oauth2-php",
     "description": "An OAuth2 Wrapper for Yammer",
     "license": "MIT",
     "authors": [
